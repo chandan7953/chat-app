@@ -22,7 +22,8 @@ const App = () => {
     <div>
       <h1 className="text-3xl font-bold underline">{BASE_URL}</h1>
       <button className="btn btn-primary">Button</button>
-      {demo && <div>{demo}</div>} {/* Display the fetched data */}
+      {demo && <div>{demo} i am developer</div>}{" "}
+      {/* Display the fetched data */}
     </div>
   );
 };
