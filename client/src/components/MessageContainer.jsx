@@ -3,6 +3,7 @@ import SendInput from "./SendInput";
 import Messages from "./Messages";
 import { useSelector, useDispatch } from "react-redux";
 import { setSelectedUser } from "../redux/userSlice";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 const MessageContainer = ({ toggleVisibility, isLeftVisible, isMobile }) => {
   const { selectedUser, authUser, onlineUsers } = useSelector(
@@ -17,13 +18,15 @@ const MessageContainer = ({ toggleVisibility, isLeftVisible, isMobile }) => {
       {selectedUser !== null ? (
         <div
           className={` ${
-            isLeftVisible && !isMobile
-              ? "hidden"
-              : "md:min-w-[550px] flex flex-col"
-          }`}
+            isLeftVisible && !isMobile ? "hidden" : "w-full flex flex-col"
+          } `}
         >
           <div className="flex gap-2 items-center text-white bg-zinc-800 px-4 py-2 mb-2">
-            <button onClick={toggleVisibility}>back</button>
+            <IoMdArrowRoundBack
+              onClick={toggleVisibility}
+              className={`${isMobile ? "hidden" : "text-white text-2xl mr-4"}`}
+            />
+
             <div className="flex gap-2 items-center ">
               <div className={`avatar ${isOnline ? "online" : ""}`}>
                 <div className="w-12 rounded-full">
@@ -45,7 +48,7 @@ const MessageContainer = ({ toggleVisibility, isLeftVisible, isMobile }) => {
           className={` ${
             isLeftVisible && !isMobile
               ? "hidden"
-              : " flex flex-col justify-center items-center"
+              : "w-full flex flex-col justify-center items-center"
           } ${isMobile ? "md:min-w-[550px]" : "w-full"}`}
         >
           <h1 className="text-4xl text-white font-bold">

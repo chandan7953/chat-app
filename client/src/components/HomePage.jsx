@@ -36,16 +36,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="flex h-[90%] w-[95%] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0 border-solid border-2 border-indigo-600">
-      {/* <div className={` ${!isLeftVisible && !isMobile ? "hidden" : ""}`}>
-        <Sidebar toggleVisibility={toggleVisibility} />
-      </div>
-      <div className={` ${isLeftVisible && !isMobile ? "hidden" : ""}`}>
-        <MessageContainer toggleVisibility={toggleVisibility} />
-      </div> */}
-
-      {console.log(isMobile)}
-
+    <div className="flex h-[95%] w-[95%] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 border-solid border-2 border-indigo-600">
       <Sidebar
         toggleVisibility={toggleVisibility}
         isLeftVisible={isLeftVisible}

@@ -49,8 +49,8 @@ const Sidebar = ({ toggleVisibility, isLeftVisible, isMobile }) => {
       className={`  ${
         !isLeftVisible && !isMobile
           ? "hidden"
-          : "border-r border-slate-500 p-4 flex flex-col"
-      }`}
+          : "border-r border-slate-500 p-4 flex flex-col "
+      }  ${!isMobile ? "w-full" : "w-[30%] min-w-[300px]"}`}
     >
       <form
         onSubmit={searchSubmitHandler}
@@ -60,11 +60,11 @@ const Sidebar = ({ toggleVisibility, isLeftVisible, isMobile }) => {
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="input input-bordered rounded-md"
+          className="input input-bordered rounded-md w-[80%]"
           type="text"
           placeholder="Search..."
         />
-        <button type="submit" className="btn bg-zinc-700 text-white">
+        <button type="submit" className="btn w-[20%] bg-zinc-700 text-white">
           <BiSearchAlt2 className="w-6 h-6 outline-none" />
         </button>
       </form>
