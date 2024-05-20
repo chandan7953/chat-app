@@ -3,6 +3,7 @@ import { BASE_URL } from "./main";
 import axios from "axios";
 
 const App = () => {
+  const [demo, setDemo] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       try {

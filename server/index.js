@@ -17,11 +17,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-// CORS configuration
+// CORS configuration to allow any origin with credentials
 const corsOptions = {
-  origin: "http://localhost:5173",
-  credentials: true,
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true); // Allow requests with no origin (like mobile apps, curl requests)
+    callback(null, true); // Allow any origin
+  },
+  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 };
+
 app.use(cors(corsOptions));
 
 // Routes
