@@ -17,15 +17,15 @@ app.use(express.json());
 app.use(cookieParser());
 
 // CORS configuration to allow any origin with credentials
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (!origin) return callback(null, true); // Allow requests with no origin (like mobile apps, curl requests)
-//     callback(null, true); // Allow any origin
-//   },
-//   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
-// };
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true); // Allow requests with no origin (like mobile apps, curl requests)
+    callback(null, true); // Allow any origin
+  },
+  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+};
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 // Routes
 app.use("/api/v1/user", userRoute);
