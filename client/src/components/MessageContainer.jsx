@@ -18,7 +18,9 @@ const MessageContainer = ({ toggleVisibility, isLeftVisible, isMobile }) => {
       {selectedUser !== null ? (
         <div
           className={` ${
-            isLeftVisible && !isMobile ? "hidden" : "w-full flex flex-col"
+            isLeftVisible && !isMobile
+              ? "hidden"
+              : "w-full flex flex-col bg-[#2C4E80]"
           } `}
         >
           <div className="flex gap-2 items-center text-white bg-zinc-800 px-4 py-2 mb-2">
@@ -48,7 +50,7 @@ const MessageContainer = ({ toggleVisibility, isLeftVisible, isMobile }) => {
           className={` ${
             isLeftVisible && !isMobile
               ? "hidden"
-              : "w-full flex flex-col justify-center items-center"
+              : "w-full flex flex-col justify-center items-center bg-[#2C4E80]"
           } ${isMobile ? "md:min-w-[550px]" : "w-full"}`}
         >
           <h1 className="text-4xl text-white font-bold">

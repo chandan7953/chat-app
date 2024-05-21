@@ -49,7 +49,7 @@ const Sidebar = ({ toggleVisibility, isLeftVisible, isMobile }) => {
       className={`  ${
         !isLeftVisible && !isMobile
           ? "hidden"
-          : "border-r border-slate-500 p-4 flex flex-col "
+          : "border-r border-slate-500 p-4 flex flex-col bg-slate-400 "
       }  ${!isMobile ? "w-full" : "w-[30%] min-w-[300px]"}`}
     >
       <form

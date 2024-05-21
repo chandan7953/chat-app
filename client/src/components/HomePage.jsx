@@ -36,7 +36,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="flex h-[95%] w-[95%] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 border-solid border-2 border-indigo-600">
+    <div className="flex h-[95%] w-[95%] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 ">
       <Sidebar
         toggleVisibility={toggleVisibility}
         isLeftVisible={isLeftVisible}
