@@ -1,4 +1,5 @@
-import express from "express";
+// const express = require('express')// method-1
+import express from "express"; // method-2
 import dotenv from "dotenv";
 import connectDB from "./config/database.js";
 import userRoute from "./routes/userRoute.js";
@@ -6,33 +7,25 @@ import messageRoute from "./routes/messageRoute.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import { app, server } from "./socket/socket.js";
-
-dotenv.config();
+dotenv.config({});
 
 const PORT = process.env.PORT || 5000;
 
-// Middleware
+// middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-
-// CORS configuration to allow any origin with credentials
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin) return callback(null, true); // Allow requests with no origin (like mobile apps, curl requests)
-    callback(null, true); // Allow any origin
-  },
-  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+const corsOption = {
+  origin: "http://localhost:5173",
+  credentials: true,
 };
+app.use(cors(corsOption));
 
-app.use(cors(corsOptions));
-
-// Routes
+// routes
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/message", messageRoute);
 
-// Start the server
 server.listen(PORT, () => {
   connectDB();
-  console.log(`Server listening at port ${PORT}`);
+  console.log(`Server listen at prot ${PORT}`);
 });

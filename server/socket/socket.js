@@ -7,11 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: function (origin, callback) {
-      if (!origin) return callback(null, true); // Allow requests with no origin
-      callback(null, true); // Allow any origin
-    },
-    credentials: true,
+    origin: ["http://localhost:5173"],
     methods: ["GET", "POST"],
   },
 });
